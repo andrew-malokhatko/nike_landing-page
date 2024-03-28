@@ -33,7 +33,7 @@ export default function Home() {
           <Subscribe/>
         </section>
         
-        <section className="padding-x padding-t bg-black">
+        <section className="padding-x padding-t padding-b bg-black">
           <Footer/>
         </section>
     </main>

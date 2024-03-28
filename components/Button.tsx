@@ -8,17 +8,21 @@ interface ButtonProps{
     backgroundColor?: string;
     textColor?:string;
     borderColor?:string;
+    fullwidth?: boolean;
 }
 
-const Button = ({label, icon, sectionLink, backgroundColor, textColor, borderColor}: ButtonProps) => {
+const Button = ({label, icon, sectionLink, backgroundColor, textColor, borderColor, fullwidth}: ButtonProps) => {
   return (
-    <Link href={sectionLink}>
+    <Link href={sectionLink} className={`${fullwidth && `w-full`}`}>
       <button className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat
-      text-lgtext-center leading-none rounded-full
+      text-lg text-center leading-none rounded-full
       
       ${backgroundColor ? `${backgroundColor} ${textColor} ${borderColor}`:
-                        `bg-coral-red round text-white border-coral-red`}`}
-      >
+                        `bg-coral-red round text-white border-coral-red`}
+                      
+      ${fullwidth && `w-full`}
+
+      `}>
         
         {label}
         {
